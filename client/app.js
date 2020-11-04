@@ -1,25 +1,25 @@
 
 
-var convert=function(data){
+// var convert=function(data){
 
 
-  var splitonebyone=function(dataone){
+//   var splitonebyone=function(dataone){
 
-  var dataarray=[]
+//   var dataarray=[]
    
-  for(var key in dataone){
+//   for(var key in dataone){
 
-    if(typeof(dataone[key]!=='object'){
-        dataarray.push(key) 
-    })
-  }
-
-
-  }
+//     if(typeof(dataone[key]!=='object'){
+//         dataarray.push 
+//     })
+//   }
 
 
+//   }
 
 
 
 
-}
+
+
+// }

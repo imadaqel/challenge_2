@@ -1,31 +1,26 @@
-const express = require('express');
-var path = require('path');
-var bodyparser = require('body-parser')
 
+//app.use(bodyparser.json());
+// app.get('/', (req, res) => { 
+//    // res.sendfil("POST Request Called") 
+//     res.sendFile(__dirname + "/"+"/client/index.html")
+//    // console.log(req.body.name)  
+//    //res.render('index')
 
-var app = express();
-var PORT = 3000; 
-app.use(bodyparser.json());
+//   }) 
+var express=require('express');
+var app=express();
+// middleware method 
+app.use(express.json());
+app.use(express.urlencoded());
+app.post('/',function(req,res){
+   // make JSON strengify fr Objec
+   response = {  
+    data:req.body
+};  
+console.log(response,req.body);  
 
-
-
-
-
-app.listen(PORT, () => {
-    console.log('hhhhhhhh')
-  });
-app.get('/', (req, res) => { 
-   // res.sendfil("POST Request Called") 
-    res.sendFile(path.join(__dirname,"/client/index.html"))
-   // console.log(req.body.name)  
-   res.render('index')
-    
-  }) 
-
-
-  app.post('/', (req, res) => { 
-      console.log(req.body)
-    var data=JSON.parse(req.body)
-    
-    
-  }) 
+res.send(JSON.stringify(response));  
+});
+app.listen(3000,function(){
+    console.log("server at localhost:3000");
+})
